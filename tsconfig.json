@@ -5,6 +5,13 @@
     "module": "CommonJS",
 
     "outDir": "dist",
+    "baseUrl": "./src",
+
+    "paths": {
+      "ApplicationProvider": [ "ApplicationProvider" ],
+      "Controllers/*": [ "Controllers/*" ],
+      "Data/*": [ "Data/*" ]
+    },
 
     "strict": true
   }

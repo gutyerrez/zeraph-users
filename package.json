@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/Application.ts"
+    "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify ./src/Application.ts"
   },
   "dependencies": {
     "@vyrnn/zeraph-core": "link:../zeraph-core"

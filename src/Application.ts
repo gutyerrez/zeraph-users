@@ -2,7 +2,7 @@ import { HttpServer, Router, Request, Response } from '@vyrnn/zeraph-core'
 
 import { Env } from '@vyrnn/zeraph-core'
 
-import { ApplicationProvider } from './ApplicationProvider'
+import { ApplicationProvider } from 'ApplicationProvider'
 
 (() => {
   const server = new HttpServer()
