@@ -3,6 +3,7 @@ import {
   DatabaseProvider,
   Env,
   PostgreSQLDatabaseProvider,
+  RedisDatabaseProvider,
   RepositoryProvider
 } from '@vyrnn/zeraph-core'
 import path = require('path')
@@ -30,6 +31,14 @@ export  class ApplicationProvider extends AbstractApplicationProvider {
       Env.getString('POSTGRESQL_PASSWORD'),
       Env.getString('POSTGRESQL_DATABASE'),
       Env.getString('POSTGRESQL_SCHEMA')
+    )
+
+    DatabaseProvider.Databases.Redis.MAIN = new RedisDatabaseProvider(
+      Env.getString('REDIS_HOST'),
+      Env.getInt('REDIS_PORT'),
+      Env.getString('REDIS_USERNAME'),
+      Env.getString('REDIS_PASSWORD'),
+      Env.getInt('REDIS_DATABASE')
     )
 
     DatabaseProvider.prepare()
