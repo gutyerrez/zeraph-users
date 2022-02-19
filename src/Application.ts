@@ -1,4 +1,4 @@
-import { HttpServer, Router, Request, Response } from '@vyrnn/zeraph-core'
+import { HttpServer } from '@vyrnn/zeraph-core'
 
 import { Env } from '@vyrnn/zeraph-core'
 
@@ -9,14 +9,5 @@ import { ApplicationProvider } from 'ApplicationProvider'
 
   ApplicationProvider.prepare()
 
-  Router.get('/', async (_request: Request, response: Response) => {
-    response.json({
-      'API Version': '0.0.1-ALPHA'
-    })
-  })
-
-  server.listen(
-    Env.getInt('PORT'),
-    () => console.log(`Rodando na porta ${Env.getInt('PORT')}!`)
-  )
+  server.listen(Env.getInt('PORT'))
 })()

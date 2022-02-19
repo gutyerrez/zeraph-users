@@ -10,7 +10,9 @@
     "paths": {
       "ApplicationProvider": [ "ApplicationProvider" ],
       "Controllers/*": [ "Controllers/*" ],
-      "Data/*": [ "Data/*" ]
+      "Data/*": [ "Data/*" ],
+      "Router/*": [ "Router/*" ],
+      "Storage/*": [ "Storage/*" ]
     },
 
     "strict": true
