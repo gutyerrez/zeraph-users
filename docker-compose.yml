@@ -18,7 +18,7 @@ services:
     container_name: zeraph-postgresql
     image: postgres
     volumes:
-      - ./data/postgres:/var/lib/postgresql/data
+      - ./src/misc/data/postgres:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=$POSTGRESQL_USERNAME
       - POSTGRES_PASSWORD=$POSTGRESQL_PASSWORD
@@ -32,7 +32,7 @@ services:
     image: redis
     command: redis-server --requirepass $REDIS_PASSWORD
     volumes:
-      - ./data/redis:/data
+      - ./src/misc/data/redis:/data
     ports:
       - 6379:6379
     env_file:
