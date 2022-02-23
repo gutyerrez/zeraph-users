@@ -8,7 +8,7 @@
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify ./src/Application.ts"
   },
   "dependencies": {
-    "@vyrnn/zeraph-core": "link:../zeraph-core"
+    "@vyrnn/zeraph-core": "^0.0.1-ALPHA"
   },
   "devDependencies": {
     "@types/node": "^17.0.16",

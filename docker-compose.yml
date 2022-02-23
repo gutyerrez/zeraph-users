@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  web:
+    container_name: zeraph-users
+    build: .
+    command: npm install update && npm i -g ts-node-dev && yarn install && yarn dev
+    volumes:
+      - .:/home/zeraph/zeraph-users
+    ports:
+      - 3333:3333
+    env_file:
+      - .env
+    depends_on:
+      - postgresql
+      - redis
+  postgresql:
+    container_name: zeraph-postgresql
+    image: postgres
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=$POSTGRESQL_USERNAME
+      - POSTGRES_PASSWORD=$POSTGRESQL_PASSWORD
+      - POSTGRES_DB=$POSTGRESQL_DATABASE
+    ports:
+      - 5432:5432
+    env_file:
+      - .env
+  redis:
+    container_name: zeraph-redis
+    image: redis
+    command: redis-server --requirepass $REDIS_PASSWORD
+    volumes:
+      - ./data/redis:/data
+    ports:
+      - 6379:6379
+    env_file:
+      - .env
